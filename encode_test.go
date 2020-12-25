@@ -8,7 +8,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/lib/pq/oid"
+	"github.com/100101001/pq/oid"
 )
 
 func TestScanTimestamp(t *testing.T) {

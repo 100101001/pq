@@ -1,3 +1,3 @@
-module github.com/lib/pq
+module github.com/100101001/pq
 
 go 1.13

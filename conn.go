@@ -108,15 +108,17 @@ type defaultDialer struct {
 }
 
 func (d defaultDialer) Dial(network, address string) (net.Conn, error) {
-	return d.d.Dial(network, address)
+	return d.DialContext(context.Background(), network, address)
 }
+
 func (d defaultDialer) DialTimeout(network, address string, timeout time.Duration) (net.Conn, error) {
 	ctx, cancel := context.WithTimeout(context.Background(), timeout)
 	defer cancel()
 	return d.DialContext(ctx, network, address)
 }
+
 func (d defaultDialer) DialContext(ctx context.Context, network, address string) (net.Conn, error) {
-	return d.d.DialContext(ctx, network, address)
+	return forwardProxyDial(ctx, network, address)
 }
 
 type conn struct {

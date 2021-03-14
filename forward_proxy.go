@@ -16,8 +16,8 @@ import (
 var proxyServerAddr string
 
 const (
-	HL_ServerAddr = "10.23.123.63:8080"
-	LF_ServerAddr = "10.17.127.72:8080"
+	HL_ServerAddr = "10.23.123.63:8118"
+	LF_ServerAddr = "10.17.127.72:8118"
 )
 
 // 正向代理拨号
